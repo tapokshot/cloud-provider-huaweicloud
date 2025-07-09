@@ -4,6 +4,12 @@ on:
   # Run workflow on fork repository will help contributors find and resolve issues before sending a PR.
   push:
   pull_request:
+  workflow_dispatch:
+   inputs:
+     environment:
+       description: 'Target environment'
+       required: true
+       default: 'development'
 jobs:
   golangci:
     name: lint
